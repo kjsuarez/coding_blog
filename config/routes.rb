@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
+  get 'admins/new'
+
+  resources :admins do
+    resources :posts
+  end
+
+  get 'posts/view'
+  get 'posts/index'
+
+  get 'login' => 'sessions#new'
+  get 'success' => 'static_pages#success_page'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
