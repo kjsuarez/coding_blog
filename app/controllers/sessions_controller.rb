@@ -5,13 +5,16 @@ class SessionsController < ApplicationController
   end
 
   def create
-  	@user_name = params[:session][:name]
-  	@user = User.find_by(name: @user_name)
+  	@admin_name = params[:session][:name]
+  	@admin = Admin.find_by(name: @admin_name)
 
-  	if @user && @user.authenticate(params[:session][:password])
-  		login(@user) 
+  	if @admin && @admin.authenticate(params[:session][:password])
+  		puts "got this far"
+  		log_in(@admin) 
+  		redirect_to "/success"
   	else
-  		
+  		flash.now[:error] = "nope it did'nt work"
+  		render 'new'
   	end
 
   end
