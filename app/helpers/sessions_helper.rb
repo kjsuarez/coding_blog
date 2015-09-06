@@ -8,7 +8,8 @@ module SessionsHelper
 		session[:admin_id] =  admin.id
 	end
 
-	def logged_in?(admin)
+	def logged_in?
+		puts "current_user: #{current_user}"
 		!@current_user.nil?
  	end
 

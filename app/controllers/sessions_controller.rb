@@ -16,8 +16,9 @@ class SessionsController < ApplicationController
   		flash.now[:error] = "nope it did'nt work"
   		render 'new'
   	end
-
   end
-
-
+  
+  def correct_user?
+    #blank
+  end
 end
