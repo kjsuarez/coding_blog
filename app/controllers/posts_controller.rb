@@ -15,11 +15,19 @@ class PostsController < ApplicationController
 	end
 
 	def edit
-		
+		@admin = Admin.find(params[:admin_id])
+		@post = Post.find(params[:id])
+	end
+
+	def update
+		@admin = Admin.find(params[:admin_id])
+		@post = Post.find(params[:id])
+		@post.save
+		redirect_to '/posts/index'
 	end
 
 	def index
-
+		@posts = Post.all
 	end
 
 	def delete
@@ -32,10 +40,6 @@ class PostsController < ApplicationController
 	end
 
 	def logged_in_user
-		@admin = Admin.find(params[:id])
-		if @admin.id != current_user.id
-			redirect_to :index
-			flash[:error] = "you can't go here"
-		end
+		logged_in?
 	end
 end

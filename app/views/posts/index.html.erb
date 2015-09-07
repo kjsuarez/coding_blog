@@ -1,1 +1,9 @@
-welcome to the post index!
+
+<% @posts.each do |post| %>
+	<div class="post">
+
+		<h3 class='post-title'> <%= h(post.title).gsub(/\n/, '<br/>').html_safe %> </h3>
+		<div class='post-body'> <%= h(post.body).gsub(/\n/, '<br/>').html_safe %> </div>
+	</div>
+	<p></p>
+<% end %>	

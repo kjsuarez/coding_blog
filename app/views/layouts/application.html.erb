@@ -7,8 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'layouts/header' %>
-<%= yield %>
-
+	<%= render 'layouts/header' %>
+	<div class="container">		
+		<h1 class='blog-title'> Adventures of a asspiring developer </h1>
+		<%= yield %>
+	</div>
+	<div class='link-box'>
+		<a href="http://www.google.com">personal site</a>
+		<p><a href="http://www.google.com">gitHub</a></p>
+		<a href="http://www.google.com">guildHouse</a>
+	</div>
 </body>
 </html>
