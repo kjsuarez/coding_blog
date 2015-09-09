@@ -4,18 +4,20 @@
 
 .post{
 	display: block;
-	text-align: center;
+
 	margin: auto;
 	padding: 2em;
 	width: 50%;
-	background-color: #0066FF;
+	
 }
 
 .post-title{
-	background-color: #6666FF;
+	text-align: left;
 }
 
 .post-body{
-	background-color: #9966FF;
+	font-size: 120%;
+	text-align: left;
+	
 }
 

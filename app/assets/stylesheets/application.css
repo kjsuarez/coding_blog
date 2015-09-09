@@ -21,21 +21,24 @@ html {
 body{
 	text-align: center;
 	margin: 0;
-	background-color: #999966;
+	background-color: ;/*#999966*/
 }
 .blog-title{
+	font-family: sans-serif;
+	font-size: 300%;
+	font-style: bold;
 	margin: 2em;
-	background-color: #339966;
+	background-color: ;/*#339966*/
 }
 .container{
 	text-align: center;
 	margin-top: 0em;
 	margin-left: 2em;
-	background-color: #FF5050;
+	background-color: ;/*#FF5050*/
 	padding-left: 0em;
 }
 .link-box{
-	background-color: #66FF66;
+	background-color: ;/*#66FF66*/
 	position: fixed;
     left: 64em;
     top: 12em;
