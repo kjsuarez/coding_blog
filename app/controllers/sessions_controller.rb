@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   	@admin = Admin.find_by(name: @admin_name)
 
   	if @admin && @admin.authenticate(params[:session][:password])
-  		puts "got this far"
+  		
   		log_in(@admin) 
   		redirect_to "/success"
   	else
