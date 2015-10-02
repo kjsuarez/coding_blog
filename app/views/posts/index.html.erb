@@ -4,6 +4,7 @@
 
 		<h3 class='post-title'> <%= h(post.title).gsub(/\n/, '<br/>').html_safe %> </h3>
 		<div class='post-body'> <%= h(post.body).gsub(/\n/, '<br/>').html_safe %> </div>
+		<%= button_to "edit post", "/admins/1/posts/#{post.id}/edit", method: :get %>
 	</div>
 	<p></p>
 <% end %>	

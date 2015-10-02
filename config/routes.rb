@@ -8,9 +8,8 @@ Rails.application.routes.draw do
     resources :posts
   end
 
-  get 'posts/view'
   get 'posts/index'
-
+ 
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
 

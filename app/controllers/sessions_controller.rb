@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
   	if @admin && @admin.authenticate(params[:session][:password])
   		
   		log_in(@admin) 
+      puts "current user: #{current_user}"
   		redirect_to "/success"
   	else
   		flash.now[:error] = "nope it did'nt work"

@@ -1,4 +1,6 @@
-<%= form_for([@admin, @post]) do |f| %>
+<h3> revise this post </h3>
+
+<%= form_for([@admin, @post], method: :patch) do |f| %>
 
 	<%= f.label :title %>
 	<%= f.text_field :title, class: 'form-control' %>

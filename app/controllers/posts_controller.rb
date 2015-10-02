@@ -22,6 +22,7 @@ class PostsController < ApplicationController
 	def update
 		@admin = Admin.find(params[:admin_id])
 		@post = Post.find(params[:id])
+		@post.update_attributes(post_params)
 		@post.save
 		redirect_to '/posts/index'
 	end

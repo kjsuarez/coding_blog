@@ -7,6 +7,7 @@ module Features
 		fill_in "Name", with: name
 		fill_in "Password", with: password
 		click_on "Log in"
+		return admin
 	end	
 	def incorrect_sign_in(name, password, real_name, real_password)
 		admin = Admin.create!(name: real_name, password: real_password)
