@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>CodingBlog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-	<%= render 'layouts/header' %>
-	<div class="container">		
-		<h1 class='blog-title'> Adventures of a Wandering Web Developer </h1>
-		<%= yield %>
-	</div>
-	<div class='link-box'>
-		<a href="http://www.google.com">personal site</a>
-		<p><a href="http://www.google.com">gitHub</a></p>
-		<a href="http://www.google.com">guildHouse</a>
-	</div>
-</body>
+	<head>
+	  <title>CodingBlog</title>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+		<%= render 'layouts/header' %>
+
+		<div class="container">	
+	    <% flash.each do |message_type, message| %>
+	    	<div class="alert alert-<%= message_type %>"><%= message %></div>
+	    <% end %> 
+			<h1 class='blog-title'> Adventures of a Wandering Web Developer </h1>
+			<%= yield %>
+		</div>
+		<div class='link-box'>
+			<a href="http://www.google.com">personal site</a>
+			<p><a href="http://www.google.com">gitHub</a></p>
+			<a href="http://www.google.com">guildHouse</a>
+		</div>
+	</body>
 </html>

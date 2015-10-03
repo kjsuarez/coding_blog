@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
 	end
 
 	def home	
+		puts "current user: #{current_user}, logged in? #{logged_in?}"
 	end
 
 end

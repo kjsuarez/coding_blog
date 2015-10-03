@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
+		@post.admin_id = params[:admin_id]
 		@post.save
 		redirect_to  '/posts/index'
 		flash[:success] = "posted!"
@@ -31,6 +32,11 @@ class PostsController < ApplicationController
 		@posts = Post.all
 	end
 
+	def show
+		@admin = Admin.find(params[:admin_id])
+		@post = Post.find(params[:id])
+	end
+
 	def delete
 		
 	end
@@ -41,6 +47,10 @@ class PostsController < ApplicationController
 	end
 
 	def logged_in_user
-		logged_in?
+		unless logged_in?
+			flash[:danger] = "you don't belong there"
+			redirect_to root_path
+		end
+
 	end
 end

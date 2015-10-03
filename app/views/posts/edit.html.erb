@@ -3,10 +3,10 @@
 <%= form_for([@admin, @post], method: :patch) do |f| %>
 
 	<%= f.label :title %>
-	<%= f.text_field :title, class: 'form-control' %>
+	<%= f.text_field :title, class: 'form-control'  %>
 
 	<%= f.label :body %>
-	<%= f.text_area :body, class: 'form-control' %>
+	<%= f.text_area :body, class: 'form-control', wrap: "hard" %>
 
 	<%= f.submit "update" %>
 

@@ -17,4 +17,9 @@ module Features
 		fill_in "Password", with: password
 		click_on "Log in"		
 	end
+
+	def sign_out
+		click_on "log out"
+		expect(page).to have_css 'div', text: "you've been logged out"  
+	end
 end

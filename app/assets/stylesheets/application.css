@@ -13,6 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+/* default values */
+
+textarea {
+   resize: none;
+   width: 600px;
+   height: 800px;
+   font-size: 105%;
+}
+
 html {
     font-family: sans-serif; 
     -ms-text-size-adjust: 100%; 

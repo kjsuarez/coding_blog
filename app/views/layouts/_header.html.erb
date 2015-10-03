@@ -1,4 +1,5 @@
 
 <% if logged_in? %>
 	<p> logged in </p>
+	<p> <%= button_to "log out", logout_path(method: :post) %> </p>
 <% end %>

@@ -18,6 +18,13 @@ class SessionsController < ApplicationController
   		render 'new'
   	end
   end
+
+  def destroy
+    log_out
+    puts logged_in?
+    flash[:notice] = "you've been logged out"
+    redirect_to root_path
+  end
   
   def correct_user?
     #blank
