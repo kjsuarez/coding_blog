@@ -3,7 +3,7 @@ require "rails_helper"
 feature "user signs in" do
 	
 	scenario "successfully" do
-		sign_in("test","testword")
+		sign_in("test","testword") # find me in spec/support/features/sign_in.rb
  		
  		expect(page).to have_css 'p', text: 'it worked!'
 	end
